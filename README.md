@@ -1,0 +1,231 @@
+# Tricky Ruby notebook
+
+ruby-2.5.0
+
+## All arguments are passed by reference
+
+```ruby
+class A; end
+my_number = 12
+my_string = 'hello'
+my_hash = { a: 1, b: 2 }
+a = A.new
+
+def print_obj_id(item)
+  puts item.object_id
+  item
+end
+
+def main(arr)
+  arr.each { |i| print_obj_id(i) }
+end
+
+# print objects id
+
+# 1
+puts 'example 1:'
+puts my_number.object_id
+puts my_string.object_id
+puts my_hash.object_id
+puts a.object_id
+
+# 2
+puts 'example 2:'
+arr = [my_number, my_string, my_hash, a]
+arr.each do |i|
+  puts i.object_id
+end
+
+# 3
+puts 'example 3:'
+main(arr)
+
+=begin
+example 1:
+25
+70219041399980
+70219041399920
+70219041399880
+example 2:
+25
+70219041399980
+70219041399920
+70219041399880
+example 3:
+25
+70219041399980
+70219041399920
+70219041399880
+=end
+```
+
+## Side effect by using methods with '!'
+
+```ruby
+global_arr = [1, 2, 3, 4]
+
+def change_object(object)
+  object.map!{ |i| i + 1 }
+end
+
+def pass_variable(h)
+  change_object(h)
+end
+
+puts global_arr.inspect
+new_arr = change_object(global_arr)
+puts new_arr.inspect
+puts global_arr.inspect
+
+=begin
+[1, 2, 3, 4]
+[2, 3, 4, 5]
+[2, 3, 4, 5]
+=end
+```
+
+## Side effect using hash
+
+```ruby
+global_hash = {
+  'hello' => 'world!',
+  'I love' => 'ruby'
+}
+
+def change_hash(hash)
+  hash['new_key'] = 'new value'
+  hash
+end
+
+def pass_variable(h)
+  change_hash(h)
+end
+
+puts global_hash
+new_hash = pass_variable(global_hash)
+puts new_hash
+puts global_hash
+
+=begin
+{"hello"=>"world!", "I love"=>"ruby"}
+{"hello"=>"world!", "I love"=>"ruby", "new_key"=>"new value"}
+{"hello"=>"world!", "I love"=>"ruby", "new_key"=>"new value"}
+=end
+```
+
+## Searching in hash is much faster then in array
+
+[Link to original post](https://stackoverflow.com/a/5552062/3517175)
+
+```ruby
+require 'benchmark'
+
+items_array = []
+items_hash = {}
+searchlist = []
+1.upto(10_000) do |n|
+  searchlist << n
+  items_array << n
+  items_hash[n] = n
+end
+
+Benchmark.bm(10) do |x|
+  x.report('array') do
+    searchlist.each do |el|
+      items_array.include?(el)
+    end
+  end
+  x.report('hash') do
+    searchlist.each do |el|
+      items_hash.has_key?(el)
+    end
+  end
+end
+
+=begin
+                 user     system      total        real
+array        0.468200   0.002505   0.470705 (  0.499312)
+hash         0.001410   0.000008   0.001418 (  0.001427)
+=end
+```
+
+## Super and super()
+
+super - sends all arguments; super() - sends no arguments.
+
+[Link to original post](https://stackoverflow.com/questions/31816149/difference-between-calling-super-and-calling-super)
+
+```ruby
+class A
+  def self.say_hello(name = 'Bob')
+    puts "Hello, #{name}"
+  end
+end
+
+class B < A
+  def self.say_hello(name = 'Bob')
+    super # passing all arguments
+    puts 'How are you?'
+  end
+end
+
+A.say_hello
+B.say_hello('John')
+
+=begin
+Hello, Bob
+Hello, John
+How are you?
+=end
+```
+
+```ruby
+class A
+  def self.say_hello(name = 'Bob')
+    puts "Hello, #{name}"
+  end
+end
+
+class B < A
+  def self.say_hello(name = 'Bob')
+    super() # passing no arguments
+    puts 'How are you?'
+  end
+end
+
+A.say_hello
+B.say_hello('John')
+
+=begin
+Hello, Bob
+Hello, Bob
+How are you?
+=end
+```
+
+## .freeze prevents modifications to obj.
+
+```ruby
+CONST = '12345'
+puts CONST
+CONST[0] = '0'
+puts CONST
+
+=begin
+12345
+02345
+=end
+```
+
+```ruby
+
+CONST2 = '12345'.freeze
+puts CONST2
+CONST2[0] = '0'
+puts CONST
+
+=begin
+12345
+can't modify frozen String (FrozenError)
+=end
+```
