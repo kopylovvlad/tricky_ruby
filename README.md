@@ -229,3 +229,66 @@ puts CONST
 can't modify frozen String (FrozenError)
 =end
 ```
+
+## Function definition
+
+```ruby
+require 'benchmark'
+
+# just function
+def foo1(arg1, arg2, arg3)
+  arg1 + arg2 + arg3
+end
+
+# function with default params
+def foo2(arg1 = 1, arg2 = 2, arg3 = 3)
+  arg1 + arg2 + arg3
+end
+
+# function with a hash as main argument
+def foo3(arg = {})
+  arg[:arg1] + arg[:arg2] + arg[:arg3]
+end
+
+# function with built-in keyword arguments
+def foo4(arg1: nil, arg2: nil, arg3: nil)
+  arg1 + arg2 + arg3
+end
+
+# function with built-in keyword arguments with default value
+def foo5(arg1: 1, arg2: 2, arg3: 3)
+  arg1 + arg2 + arg3
+end
+
+n = 100_000
+Benchmark.bm do |x|
+  x.report('foo1') do
+    for i in 1..n; foo1(1, 2, 3); end
+  end
+
+  x.report('foo2') do
+    for i in 1..n; foo2(1, 2, 3); end
+  end
+
+  x.report('foo3') do
+    for i in 1..n; foo3({arg1: 1, arg2: 2, arg3: 3}); end
+  end
+
+  x.report('foo4') do
+    for i in 1..n; foo4(arg1: 1, arg2: 2, arg3: 3); end
+  end
+
+  x.report('foo5') do
+    for i in 1..n; foo5(arg1: 1, arg2: 2, arg3: 3); end
+  end
+end
+
+=begin
+       user     system      total        real
+foo1  0.010000   0.000000   0.010000 (  0.011855)
+foo2  0.010000   0.000000   0.010000 (  0.015239)
+foo3  0.090000   0.010000   0.100000 (  0.098083)
+foo4  0.190000   0.000000   0.190000 (  0.200087)
+foo5  0.190000   0.010000   0.200000 (  0.201576)
+=end
+```
