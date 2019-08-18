@@ -292,3 +292,7 @@ foo4  0.021455   0.000034   0.021489 (  0.021527)
 foo5  0.018949   0.000126   0.019075 (  0.019223)
 =end
 ```
+
+## require and load
+
+Calling load twice on the same file will execute the code in that file twice. Calling require on the same file twice will only execute it once.
