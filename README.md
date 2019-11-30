@@ -296,3 +296,39 @@ foo5  0.018949   0.000126   0.019075 (  0.019223)
 ## require and load
 
 Calling load twice on the same file will execute the code in that file twice. Calling require on the same file twice will only execute it once.
+
+## Blocks precedences
+
+```ruby
+puts [1, 2].any? { |i| i == 3 }
+
+puts [1, 2].any? do |i|
+  i == 3
+end
+# Why? It happened because `put` can get a block
+
+# try to fix it
+puts ([1, 2].any? do |i|
+  i == 3
+end)
+# or in one line
+puts([1, 2].any? do |i|; i == 3; end)
+
+# source https://tech.showmax.com/2019/10/how-ruby-can-surprise-you/
+```
+
+## Natural Language in Ruby
+
+```ruby
+How many sane ways are there to use Ruby rescue
+This is actually valid Ruby code rescue
+Unfortunately we cannot use punctuation here rescue
+```
+
+## Finding Where Methods are Defined
+
+```ruby
+require 'securerandom'
+SecureRandom.method(:hex).source_location
+# ["/Users/vladislavkopylov/.rvm/rubies/ruby-2.5.0/lib/ruby/2.5.0/securerandom.rb", 147]
+```
