@@ -1,6 +1,6 @@
 # Tricky Ruby notebook
 
-ruby-2.5.0
+ruby-2.6.5
 
 ## All arguments are passed by reference
 
@@ -218,7 +218,6 @@ puts CONST
 ```
 
 ```ruby
-
 CONST2 = '12345'.freeze
 puts CONST2
 CONST2[0] = '0'
@@ -285,11 +284,11 @@ end
 
 =begin
        user     system      total        real
-foo1  0.012561   0.000113   0.012674 (  0.013952)
-foo2  0.020129   0.000202   0.020331 (  0.020496)
-foo3  0.101049   0.003909   0.104958 (  0.106932)
-foo4  0.021455   0.000034   0.021489 (  0.021527)
-foo5  0.018949   0.000126   0.019075 (  0.019223)
+foo1  0.008736   0.000055   0.008791 (  0.008877)
+foo2  0.011641   0.000070   0.011711 (  0.011813)
+foo3  0.035399   0.000907   0.036306 (  0.036632)
+foo4  0.014392   0.000143   0.014535 (  0.014684)
+foo5  0.015809   0.000087   0.015896 (  0.016030)
 =end
 ```
 
@@ -301,18 +300,24 @@ Calling load twice on the same file will execute the code in that file twice. Ca
 
 ```ruby
 puts [1, 2].any? { |i| i == 3 }
+# false
 
 puts [1, 2].any? do |i|
   i == 3
 end
+# true
+
 # Why? It happened because `put` can get a block
 
 # try to fix it
 puts ([1, 2].any? do |i|
   i == 3
 end)
+# false
+
 # or in one line
 puts([1, 2].any? do |i|; i == 3; end)
+# false
 
 # source https://tech.showmax.com/2019/10/how-ruby-can-surprise-you/
 ```
@@ -330,5 +335,5 @@ Unfortunately we cannot use punctuation here rescue
 ```ruby
 require 'securerandom'
 SecureRandom.method(:hex).source_location
-# ["/Users/vladislavkopylov/.rvm/rubies/ruby-2.5.0/lib/ruby/2.5.0/securerandom.rb", 147]
+# ["/Users/my_user/.rvm/rubies/ruby-2.6.5/lib/ruby/2.6.0/securerandom.rb", 158]
 ```
