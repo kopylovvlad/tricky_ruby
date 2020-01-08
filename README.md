@@ -337,3 +337,41 @@ require 'securerandom'
 SecureRandom.method(:hex).source_location
 # ["/Users/my_user/.rvm/rubies/ruby-2.6.5/lib/ruby/2.6.0/securerandom.rb", 158]
 ```
+
+## .clone, .dup, .deep_dup can't do deep clone for objects and Hash
+
+```ruby
+StruckObject = Struct.new(:value, :nested_object)
+obj = StruckObject.new(1, StruckObject.new(2))
+
+### example
+
+obj.clone.object_id == obj.object_id
+# false
+obj.clone.value.object_id == obj.value.object_id
+# true
+obj.clone.nested_object.object_id == obj.nested_object.object_id
+# true
+
+# and we can easily change original object
+obj.clone.nested_object.value = 33
+obj.nested_object
+# <struct StruckObject value=33, nested_object=nil>
+
+
+### Solution: use Hash and .deep_clone (rails)
+obj = { value: 1, nested_object: {value: 2, nested_object: nil } }
+
+obj.deep_dup.object_id == obj.object_id
+# false
+obj.deep_dup[:value].object_id == obj[:value].object_id
+# true
+obj.deep_dup[:nested_object].object_id == obj[:nested_object].object_id
+# false
+
+obj[:nested_object]
+# {:value=>2, :nested_object=>nil}
+obj.deep_dup[:nested_object][:value] = 44
+obj[:nested_object]
+# {:value=>2, :nested_object=>nil}
+```
