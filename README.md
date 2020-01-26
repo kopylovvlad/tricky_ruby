@@ -341,8 +341,8 @@ SecureRandom.method(:hex).source_location
 ## .clone, .dup, .deep_dup can't do deep clone for objects and Hash
 
 ```ruby
-StruckObject = Struct.new(:value, :nested_object)
-obj = StruckObject.new(1, StruckObject.new(2))
+StructObject = Struct.new(:value, :nested_object)
+obj = StructObject.new(1, StructObject.new(2))
 
 ### example
 
@@ -356,7 +356,7 @@ obj.clone.nested_object.object_id == obj.nested_object.object_id
 # and we can easily change original object
 obj.clone.nested_object.value = 33
 obj.nested_object
-# <struct StruckObject value=33, nested_object=nil>
+# <struct StructObject value=33, nested_object=nil>
 
 
 ### Solution: use Hash and .deep_clone (rails)
