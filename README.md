@@ -16,6 +16,8 @@ ruby-2.6.5
 - [Natural Language in Ruby](#natural-language-in-ruby)
 - [Finding Where Methods are Defined](#finding-where-methods-are-defined)
 - [.clone, .dup, .deep_dup can't do deep clone for objects and Hash](#clone-dup-deep_dup-cant-do-deep-clone-for-objects-and-hash)
+- [Variable and fuction names](#variable-and-fuction-names)
+- [Attr_writer doesn't work inside methods]()
 
 ## All arguments are passed by reference
 
@@ -389,4 +391,88 @@ obj[:nested_object]
 obj.deep_dup[:nested_object][:value] = 44
 obj[:nested_object]
 # {:value=>2, :nested_object=>nil}
+```
+
+## Variable and fuction names
+
+```ruby
+class Foo
+  def initialize
+    @counter = 0
+  end
+
+  def call1
+    @counter = bar # bar is funtion
+    @counter # counter eqials 13
+  end
+
+  def call2
+    bar = 22 # bar is variable
+    @counter = bar # assign 22 to counter
+    @counter # counter equals 22
+  end
+
+  def call3
+    bar = 22 # bar is variable
+    @counter = bar() # assign 13 to counter, because bar() is function
+    @counter # counter equals 13
+  end
+
+  private
+
+  def bar
+    12 + 1
+  end
+end
+
+puts Foo.new.call1
+puts Foo.new.call2
+puts Foo.new.call3
+```
+
+## Attr_writer doesn't work inside methods
+
+```ruby
+class Foo
+  attr_accessor :row, :counter
+
+  def initialize
+    @row = { a: nil, b: 0 }
+    @counter = 0
+  end
+
+  # the method raises `undefined method `+' for nil:NilClass`
+  # it happens because the interpreter changes line `counter += 1`
+  # into `counter = counter + 1`
+  # therefore it thinks that `counter` is a variable with value `nil`
+  def call1
+    row[:a] = 1 # `row[:]` calls attr_reader and change value by link
+    counter += 1
+    counter
+  end
+
+  def call2
+    row[:a] = 1
+    counter = 13 # it is variable
+    counter += 1 # it the same variable with value 14
+    counter # the method return 14. instance variable `@counter` still has value 0
+  end
+
+  def call3
+    row[:a] = 1
+    @counter = 14 + 1 # it the same variable with value 14
+    [counter, @counter] # it returns [15, 15] because the interpreter considers `counter` as not a variable, as attr_reader
+  end
+
+  def call4
+    row[:a] = 1
+    @counter += 1 # the line equals `@counter = @counter + 1`
+    counter # it returns 1, because `counter` is not a variable, it's attr_reader
+  end
+end
+
+puts Foo.new.call1
+puts Foo.new.call2
+puts Foo.new.call3
+puts Foo.new.call4
 ```
