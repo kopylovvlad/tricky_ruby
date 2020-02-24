@@ -17,7 +17,7 @@ ruby-2.6.5
 - [Finding Where Methods are Defined](#finding-where-methods-are-defined)
 - [.clone, .dup, .deep_dup can't do deep clone for objects and Hash](#clone-dup-deep_dup-cant-do-deep-clone-for-objects-and-hash)
 - [Variable and fuction names](#variable-and-fuction-names)
-- [Attr_writer doesn't work inside methods]()
+- [Attr_writer doesn't work inside methods](#attr_writer-doesnt-work-inside-methods)
 
 ## All arguments are passed by reference
 
