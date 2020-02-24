@@ -2,6 +2,21 @@
 
 ruby-2.6.5
 
+## Сontents
+
+- [All arguments are passed by reference](#all-arguments-are-passed-by-reference)
+- [Side effect by using methods with '!'](#side-effect-by-using-methods-with-)
+- [Side effect using hash](#side-effect-using-hash)
+- [Searching in hash is much faster than in array](#searching-in-hash-is-much-faster-than-in-array)
+- [Super and super()](#super-and-super)
+- [.freeze prevents modifications to obj.](#freeze-prevents-modifications-to-obj)
+- [Function definition](#function-definition)
+- [require and load](#require-and-load)
+- [Blocks precedences](#blocks-precedences)
+- [Natural Language in Ruby](#natural-language-in-ruby)
+- [Finding Where Methods are Defined](#finding-where-methods-are-defined)
+- [.clone, .dup, .deep_dup can't do deep clone for objects and Hash](#clone-dup-deep_dup-cant-do-deep-clone-for-objects-and-hash)
+
 ## All arguments are passed by reference
 
 ```ruby
@@ -113,7 +128,7 @@ puts global_hash
 =end
 ```
 
-## Searching in hash is much faster then in array
+## Searching in hash is much faster than in array
 
 [Link to original post](https://stackoverflow.com/a/5552062/3517175)
 
