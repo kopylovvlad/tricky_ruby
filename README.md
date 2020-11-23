@@ -1,6 +1,6 @@
 # Tricky Ruby notebook
 
-ruby-2.6.5
+ruby-2.7.0
 
 ## Сontents
 
@@ -18,6 +18,10 @@ ruby-2.6.5
 - [.clone, .dup, .deep_dup can't do deep clone for objects and Hash](#clone-dup-deep_dup-cant-do-deep-clone-for-objects-and-hash)
 - [Variable and fuction names](#variable-and-fuction-names)
 - [Attr_writer doesn't work inside methods](#attr_writer-doesnt-work-inside-methods)
+- [Break could take an argument and pass it](#break-could-take-an-argument-and-pass-it)
+- [Implicit string concatenation](#implicit-string-concatenation)
+- [Retry in begin/rescue block](#retry-in-begin-rescue-block)
+- [Trailing Comma in functions](#trailing-comma-in-functions)
 
 ## All arguments are passed by reference
 
@@ -45,6 +49,11 @@ puts my_number.object_id
 puts my_string.object_id
 puts my_hash.object_id
 puts a.object_id
+# example 1:
+# 25
+# 180
+# 200
+# 220
 
 # 2
 puts 'example 2:'
@@ -52,28 +61,20 @@ arr = [my_number, my_string, my_hash, a]
 arr.each do |i|
   puts i.object_id
 end
+# example 2:
+# 25
+# 180
+# 200
+# 220
 
 # 3
 puts 'example 3:'
 main(arr)
-
-=begin
-example 1:
-25
-70219041399980
-70219041399920
-70219041399880
-example 2:
-25
-70219041399980
-70219041399920
-70219041399880
-example 3:
-25
-70219041399980
-70219041399920
-70219041399880
-=end
+# example 3:
+# 25
+# 180
+# 200
+# 220
 ```
 
 ## Side effect by using methods with '!'
@@ -90,15 +91,12 @@ def pass_variable(h)
 end
 
 puts global_arr.inspect
+# [1, 2, 3, 4]
 new_arr = change_object(global_arr)
 puts new_arr.inspect
+# [2, 3, 4, 5]
 puts global_arr.inspect
-
-=begin
-[1, 2, 3, 4]
-[2, 3, 4, 5]
-[2, 3, 4, 5]
-=end
+# [2, 3, 4, 5]
 ```
 
 ## Side effect using hash
@@ -119,15 +117,12 @@ def pass_variable(h)
 end
 
 puts global_hash
+# {"hello"=>"world!", "I love"=>"ruby"}
 new_hash = pass_variable(global_hash)
 puts new_hash
+# {"hello"=>"world!", "I love"=>"ruby", "new_key"=>"new value"}
 puts global_hash
-
-=begin
-{"hello"=>"world!", "I love"=>"ruby"}
-{"hello"=>"world!", "I love"=>"ruby", "new_key"=>"new value"}
-{"hello"=>"world!", "I love"=>"ruby", "new_key"=>"new value"}
-=end
+# {"hello"=>"world!", "I love"=>"ruby", "new_key"=>"new value"}
 ```
 
 ## Searching in hash is much faster than in array
@@ -161,8 +156,8 @@ end
 
 =begin
                  user     system      total        real
-array        0.468200   0.002505   0.470705 (  0.499312)
-hash         0.001410   0.000008   0.001418 (  0.001427)
+array        0.546875   0.003028   0.549903 (  0.552962)
+hash         0.005654   0.002471   0.008125 (  0.010864)
 =end
 ```
 
@@ -225,25 +220,21 @@ How are you?
 ```ruby
 CONST = '12345'
 puts CONST
+# 12345
+
 CONST[0] = '0'
 puts CONST
-
-=begin
-12345
-02345
-=end
+# 02345
 ```
 
 ```ruby
 CONST2 = '12345'.freeze
 puts CONST2
+# 12345
+
 CONST2[0] = '0'
 puts CONST
-
-=begin
-12345
-can't modify frozen String (FrozenError)
-=end
+# can't modify frozen String (FrozenError)
 ```
 
 ## Function definition
@@ -251,61 +242,61 @@ can't modify frozen String (FrozenError)
 ```ruby
 require 'benchmark'
 
-# just function
+# just func
 def foo1(arg1, arg2, arg3)
   arg1 + arg2 + arg3
 end
 
-# function with default params
+# func with default params
 def foo2(arg1 = 1, arg2 = 2, arg3 = 3)
   arg1 + arg2 + arg3
 end
 
-# function with a hash as main argument
+# func with a hash as main argument
 def foo3(arg = {})
   arg[:arg1] + arg[:arg2] + arg[:arg3]
 end
 
-# function with built-in keyword arguments
+# func with built-in keyword arguments
 def foo4(arg1: nil, arg2: nil, arg3: nil)
   arg1 + arg2 + arg3
 end
 
-# function with built-in keyword arguments with default value
+# func with built-in keyword arguments with default value
 def foo5(arg1: 1, arg2: 2, arg3: 3)
   arg1 + arg2 + arg3
 end
 
 n = 100_000
 Benchmark.bm do |x|
-  x.report('foo1') do
+  x.report('just func') do
     for i in 1..n; foo1(1, 2, 3); end
   end
 
-  x.report('foo2') do
+  x.report('func with default params') do
     for i in 1..n; foo2(1, 2, 3); end
   end
 
-  x.report('foo3') do
+  x.report('func with a hash as main argument') do
     for i in 1..n; foo3({arg1: 1, arg2: 2, arg3: 3}); end
   end
 
-  x.report('foo4') do
+  x.report('func with built-in keyw args') do
     for i in 1..n; foo4(arg1: 1, arg2: 2, arg3: 3); end
   end
 
-  x.report('foo5') do
+  x.report('func with built-in keyw args with default') do
     for i in 1..n; foo5(arg1: 1, arg2: 2, arg3: 3); end
   end
 end
 
 =begin
-       user     system      total        real
-foo1  0.008736   0.000055   0.008791 (  0.008877)
-foo2  0.011641   0.000070   0.011711 (  0.011813)
-foo3  0.035399   0.000907   0.036306 (  0.036632)
-foo4  0.014392   0.000143   0.014535 (  0.014684)
-foo5  0.015809   0.000087   0.015896 (  0.016030)
+                                            user     system      total        real
+just func                                  0.013483   0.000200   0.013683 (  0.013926)
+func with default params                   0.015669   0.000042   0.015711 (  0.015785)
+func with a hash as main argument          0.034613   0.001180   0.035793 (  0.036117)
+func with built-in keyw args               0.014099   0.000019   0.014118 (  0.014150)
+func with built-in keyw args with default  0.020912   0.000208   0.021120 (  0.022070)
 =end
 ```
 
@@ -352,7 +343,7 @@ Unfortunately we cannot use punctuation here rescue
 ```ruby
 require 'securerandom'
 SecureRandom.method(:hex).source_location
-# ["/Users/my_user/.rvm/rubies/ruby-2.6.5/lib/ruby/2.6.0/securerandom.rb", 158]
+# ["/Users/my_user/.rvm/rubies/ruby-2.7.0/lib/ruby/2.7.0/securerandom.rb", 175]
 ```
 
 ## .clone, .dup, .deep_dup can't do deep clone for objects and Hash
@@ -426,8 +417,11 @@ class Foo
 end
 
 puts Foo.new.call1
+# 13
 puts Foo.new.call2
+# 22
 puts Foo.new.call3
+# 13
 ```
 
 ## Attr_writer doesn't work inside methods
@@ -446,14 +440,14 @@ class Foo
   # into `counter = counter + 1`
   # therefore it thinks that `counter` is a variable with value `nil`
   def call1
-    row[:a] = 1 # `row[:]` calls attr_reader and change value by link
+    row[:a] = 1 # `row[:]` calls attr_reader and change value by reference
     counter += 1
     counter
   end
 
   def call2
     row[:a] = 1
-    counter = 13 # it is variable
+    counter = 13 # it is a variable
     counter += 1 # it the same variable with value 14
     counter # the method return 14. instance variable `@counter` still has value 0
   end
@@ -472,7 +466,78 @@ class Foo
 end
 
 puts Foo.new.call1
+# NoMethodError (undefined method `+' for nil:NilClass)
 puts Foo.new.call2
+# 14
 puts Foo.new.call3
+# [15, 15]
 puts Foo.new.call4
+# 1
+```
+
+## Break could take an argument and pass it
+
+```ruby
+collection = [1, 2, 3, 4, 5]
+
+stopped_at = collection.each do |i|
+   break i if i == 3
+
+   puts "Processed #{i}"
+end
+# Processed 1
+# Processed 2
+
+puts "Stopped at and did not process #{stopped_at}"
+# Stopped at and did not process 3
+```
+
+## Implicit string concatenation
+
+```ruby
+array = ['Item 1' 'Item 2']
+puts array
+# ["Item 1Item 2"]
+```
+
+## Retry in begin/rescue block
+
+[Link to interesting post](https://blog.appsignal.com/2018/06/05/redo-retry-next.html)
+
+```ruby
+i = 0
+begin
+  p "run xxx func"
+  xxx(ooo)
+rescue => e
+  i += 1
+  p "err: #{e.message}"
+  sleep 1
+  retry if i < 3
+end
+# "run xxx func"
+# "err: undefined local variable or method `ooo' for main:Object"
+# "run xxx func"
+# "err: undefined local variable or method `ooo' for main:Object"
+# "run xxx func"
+# "err: undefined local variable or method `ooo' for main:Object"
+
+i
+# => 3
+```
+
+## Trailing Comma in functions
+
+```ruby
+def add_twelve(a)
+  a + 12
+end
+# => :foo
+add_twelve(1)
+# => 13
+add_twelve(1,)
+# => 13
+foo(1,'')
+# ArgumentError: wrong number of arguments (given 2, expected 1)
+# from (pry):11:in 'add_twelve'
 ```
