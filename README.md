@@ -28,7 +28,7 @@ ruby-2.7.0
 
 ## All arguments are passed by reference
 
-```rubys
+```ruby
 class A; end
 my_number = 12
 my_string = 'hello'
