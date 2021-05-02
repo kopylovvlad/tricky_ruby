@@ -22,10 +22,13 @@ ruby-2.7.0
 - [Implicit string concatenation](#implicit-string-concatenation)
 - [Retry in begin/rescue block](#retry-in-begin-rescue-block)
 - [Trailing Comma in functions](#trailing-comma-in-functions)
+- [Ensure inside function](#ensure-inside-function)
+- [Creating variables and self assignment](#creating-variables-and-self-assignment)
+- [Converting time to string](#converting-time-to-string)
 
 ## All arguments are passed by reference
 
-```ruby
+```rubys
 class A; end
 my_number = 12
 my_string = 'hello'
@@ -540,4 +543,82 @@ add_twelve(1,)
 foo(1,'')
 # ArgumentError: wrong number of arguments (given 2, expected 1)
 # from (pry):11:in 'add_twelve'
+```
+
+## Ensure inside function
+
+```ruby
+def foo
+  puts 'before_exception'
+  12 / 0 # it raises an exception
+  puts 'after_exception'
+ensure
+  puts 'in_ensure_block'
+end
+
+foo()
+# before_exception
+# in_ensure_block
+# divided by 0 (ZeroDivisionError)
+
+def foo2
+  begin
+    puts 'before_exception'
+    12 / 0
+    puts 'after_exception'
+  rescue => e
+    puts "We have exception #{e.inspect}"
+  ensure
+    puts 'in_ensure_block'
+  end
+  puts 'last line of the function'
+end
+
+foo2()
+# before_exception
+# We have exception #<ZeroDivisionError: divided by 0>
+# in_ensure_block
+# last line of the function
+```
+
+## Creating variables and self assignment
+
+```ruby
+2.7.0 :001 > a = a
+2.7.0 :002 > a
+# nil
+
+2.7.0 :003 > b = b.to_s + ''
+2.7.0 :004 > b
+# ""
+
+2.7.0 :005 > c = c.to_i + 1
+2.7.0 :006 > c
+# 1
+```
+
+## Converting time to string
+
+```ruby
+# in plain Ruby time isn't wrapped in quotes
+eval({a: 'string', time: Time.now}.to_s)
+# SyntaxError ((eval):1: syntax error, unexpected integer literal, expecting '}')
+# ...>"string", :time=>2021-05-02 14:35:24.064579 +0300}
+
+eval({a: 'string', time: Time.now.to_s}.to_s)
+# {:a=>"string", :time=>"2021-05-02 14:35:24 +0300"}
+
+
+
+# with Rails we have the save behaviour
+require 'rails'
+eval({a: 'string', time: Time.now}.to_s)
+# SyntaxError ((eval):1: syntax error, unexpected integer literal, expecting '}')
+# ...>"string", :time=>2021-05-02 14:35:24.064579 +0300}
+eval({a: 'string', time: Time.now.to_s}.to_s)
+# {:a=>"string", :time=>"2021-05-02 14:35:24 +0300"}
+
+# but .to_json always wrappes time in quotes
+eval({a: 'string', time: Time.now}.to_json)
+# {:a=>"string", :time=>"2021-05-02T14:35:24.005+03:00"}
 ```
