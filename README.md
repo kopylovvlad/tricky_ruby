@@ -10,7 +10,7 @@ Hello. It's a repository with my notes about not obvious things in Ruby and RoR.
 - [Searching in hash is much faster than in array](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/004_searching_in_hash_is_much_faster_than_in_array)
 - [Super and super()](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/005_super_and_super)
 - [.freeze prevents modifications to obj](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/006_freeze_prevents_modifications_to_object)
-- [Function definition](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/function_definition)
+- [Function definition](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/007_function_definition)
 - [Difference between require and load](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/008_require_and_load)
 - [Blocks precedences](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/009_blocks_precedences)
 - [Natural Language in Ruby](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/010_natural_language_in_ruby)
