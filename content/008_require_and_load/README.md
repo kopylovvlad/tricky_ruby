@@ -1,0 +1,3 @@
+## Difference between require and load
+
+Calling load twice on the same file will execute the code in that file twice. Calling require on the same file twice will only execute it once.
