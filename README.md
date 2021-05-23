@@ -25,6 +25,7 @@ Hello. It's a repository with my notes about not obvious things in Ruby and RoR.
 - [Ensure inside function](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/019_ensure_inside_function)
 - [Creating variables and self assignment](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/020_creating_variables_and_self_assignment)
 - [Converting time to string](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/021_converting_time_to_string)
+- [Change default Rails logger formatter](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/022_change_default_rails_logger_formatter)
 
 # Current Ruby version
 
