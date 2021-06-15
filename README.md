@@ -2,7 +2,7 @@
 
 Hello. It's a repository with my notes about not obvious things in Ruby and RoR. Some of them can be dangerous or can produce side-effect in your code.
 
-## Сontent
+## About Ruby and Ruby on Rails
 
 - [All arguments are passed by reference](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/001_all_arguments_are_passed_by_reference)
 - [Side effect by using bang methods](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/002_side_effect_by_using_bang_methods)
@@ -30,6 +30,11 @@ Hello. It's a repository with my notes about not obvious things in Ruby and RoR.
 - [How to read your ruby history](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/024_how_to_read_your_ruby_history)
 - [How to pass block without &block argument](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/025_how_to_pass_block_without_block_argument)
 - [Heredoc without leading and trailing whitespace](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/026_heredoc_without_leading_and_trailing_whitespace)
+
+## About Ruby ecosystem
+
+- [Checklist for authors of Ruby gems](https://github.com/kopylovvlad/tricky_ruby/tree/master/content2/001_checklist_for_authors_of_ruby_gems)
+- [Generator for rails new command](https://github.com/kopylovvlad/tricky_ruby/tree/master/content2/002_generator_for_rails_new_command)
 
 # Current Ruby version
 
