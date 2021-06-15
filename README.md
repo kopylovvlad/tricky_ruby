@@ -28,6 +28,8 @@ Hello. It's a repository with my notes about not obvious things in Ruby and RoR.
 - [Change default Rails logger formatter](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/022_change_default_rails_logger_formatter)
 - [Chaining then to organise your code](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/023_chaining_then_to_organise_your_code)
 - [How to read your ruby history](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/024_how_to_read_your_ruby_history)
+- [How to pass block without &block argument](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/025_how_to_pass_block_without_block_argument)
+- [Heredoc without leading and trailing whitespace](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/026_heredoc_without_leading_and_trailing_whitespace)
 
 # Current Ruby version
 
