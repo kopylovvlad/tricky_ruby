@@ -30,6 +30,8 @@ Hello. It's a repository with my notes about not obvious things in Ruby and RoR.
 - [How to read your ruby history](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/024_how_to_read_your_ruby_history)
 - [How to pass block without &block argument](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/025_how_to_pass_block_without_block_argument)
 - [Heredoc without leading and trailing whitespace](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/026_heredoc_without_leading_and_trailing_whitespace)
+- [Improve your application by active_record_doctor](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/027_improve_your_application_by_active_record_doctor)
+- [Best practices how to write migration in Rails](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/028_best_practices_how_to_write_migration_in_rails)
 
 ## About Ruby ecosystem
 
