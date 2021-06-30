@@ -32,6 +32,7 @@ Hello. It's a repository with my notes about not obvious things in Ruby and RoR.
 - [Heredoc without leading and trailing whitespace](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/026_heredoc_without_leading_and_trailing_whitespace)
 - [Improve your application by active_record_doctor](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/027_improve_your_application_by_active_record_doctor)
 - [Best practices how to write migration in Rails](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/028_best_practices_how_to_write_migration_in_rails)
+- [Strong and soft ETag in Rails](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/029_strong_and_soft_etag_in_rails)
 
 ## About Ruby ecosystem
 

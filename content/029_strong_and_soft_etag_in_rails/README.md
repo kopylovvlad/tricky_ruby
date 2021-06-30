@@ -1,0 +1,55 @@
+## Strong and soft ETag in Rails
+
+In rails you can cache data by HTTP. We can do it by Weak ETags.
+
+```ruby
+def index
+  @posts = Post.all
+  fresh_when(@posts)
+end
+
+# or
+
+def index
+  @posts = Post.all
+  if stale?(@posts)
+    render json: @posts
+  end
+end
+```
+
+In order to use it, you have to send two requests. First
+
+```
+$ curl -I http://localhost:3000/posts
+HTTP/1.1 200 OK
+ETag: W/"a2b68b7a7f8c67f1b88848651a86f5f5"
+```
+
+And second with If-None-Match header
+
+```
+$ curl -I -H 'If-None-Match: W/"a2b68b7a7f8c67f1b88848651a86f5f5"' http://localhost:3000/posts
+
+HTTP/1.1 304 Not Modified
+ETag: W/"a2b68b7a7f8c67f1b88848651a86f5f5"
+```
+
+There is also Strong ETags
+
+- Strong ETag indicates that resource content is same for response body and the response headers.
+- Weak ETag indicates that the two representations are semantically equivalent. It compares only the response body.
+
+In order to use strong ETags, write
+
+```ruby
+def index
+  @posts = Post.all
+  fresh_when(strong_etag: @posts)
+end
+```
+
+Source:
+
+- [Rails 5 Passing records to fresh_when and stale?](https://www.bigbinary.com/blog/rails-5-supports-passing-collection-of-records-to-fresh_when-and-stale)
+- [Rails 5 switches from strong etags to weak etags](https://www.bigbinary.com/blog/rails-5-switches-from-strong-etags-to-weak-tags)
