@@ -41,6 +41,10 @@ Hello. It's a repository with my notes about not obvious things in Ruby and RoR.
 - [Checklist for authors of Ruby gems](https://github.com/kopylovvlad/tricky_ruby/tree/master/content2/001_checklist_for_authors_of_ruby_gems)
 - [Generator for rails new command](https://github.com/kopylovvlad/tricky_ruby/tree/master/content2/002_generator_for_rails_new_command)
 
-# Current Ruby version
+## Current Ruby version
 
 ruby-2.7.0
+
+## TODO
+
+- [ ] Split "About Ruby and Ruby on Rails" to two groups "Ruby" and "Rails"
