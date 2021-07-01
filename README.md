@@ -35,11 +35,13 @@ Hello. It's a repository with my notes about not obvious things in Ruby and RoR.
 - [Strong and soft ETag in Rails](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/029_strong_and_soft_etag_in_rails)
 - [How active records method works](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/030_how_active_records_methods_work)
 - [How to render images in iTerm](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/031_how_to_render_images_in_iterm)
+- [Isolate transaction in Rails](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/032_isolate_transaction_in_rails)
 
 ## About Ruby ecosystem
 
 - [Checklist for authors of Ruby gems](https://github.com/kopylovvlad/tricky_ruby/tree/master/content2/001_checklist_for_authors_of_ruby_gems)
 - [Generator for rails new command](https://github.com/kopylovvlad/tricky_ruby/tree/master/content2/002_generator_for_rails_new_command)
+- [Test-prof - a tool to analyze your test suite performance](https://github.com/kopylovvlad/tricky_ruby/tree/master/content2/003_test_prof_best_a_to_analyze_your_test_suite_performance)
 
 ## Current Ruby version
 
