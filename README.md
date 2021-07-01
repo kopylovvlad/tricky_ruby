@@ -51,3 +51,4 @@ ruby-2.7.0
 ## TODO
 
 - [ ] Split "About Ruby and Ruby on Rails" to two groups "Ruby" and "Rails"
+- [ ] Add image in the file
