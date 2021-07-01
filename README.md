@@ -36,6 +36,7 @@ Hello. It's a repository with my notes about not obvious things in Ruby and RoR.
 - [How active records method works](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/030_how_active_records_methods_work)
 - [How to render images in iTerm](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/031_how_to_render_images_in_iterm)
 - [Isolate transaction in Rails](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/032_isolate_transaction_in_rails)
+- [Open core libs source code](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/033_open_core_libs_source_code)
 
 ## About Ruby ecosystem
 
