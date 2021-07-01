@@ -34,6 +34,7 @@ Hello. It's a repository with my notes about not obvious things in Ruby and RoR.
 - [Best practices how to write migration in Rails](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/028_best_practices_how_to_write_migration_in_rails)
 - [Strong and soft ETag in Rails](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/029_strong_and_soft_etag_in_rails)
 - [How active records method works](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/030_how_active_records_methods_work)
+- [How to render images in iTerm](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/031_how_to_render_images_in_iterm)
 
 ## About Ruby ecosystem
 
