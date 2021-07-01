@@ -2,12 +2,14 @@
 
 Using `&block` makes your code slower, in order to avoid it use `&Proc.new`
 
+Note: It does not work with Ruby 3 => ``new': tried to create Proc object without a block (ArgumentError)`
+
 ```ruby
 class A
-  def self.call(&block)
+  def self.call
     return unless block_given?
 
-    new.call { block.call }
+    new.call(&Proc.new)
   end
 
   def call
