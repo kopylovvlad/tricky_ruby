@@ -11,7 +11,7 @@ end
 # [2,3,4]
 ```
 
-and pass a method
+You can also use `&method` with a method
 
 ```ruby
 class Foo
@@ -26,8 +26,18 @@ class Foo
   end
 end
 
-
 puts Foo.new.call([1,2,3])
 # [2,3,4]
+```
 
+In order to pass a proc or lambda, use just `&`
+
+```ruby
+add_two = Proc.new { |i| i + 2 }
+[1,2,3].map(&add_two)
+# [3, 4, 5]
+
+add_three = lambda { |i| i + 3 }
+[1,2,3].map(&add_three)
+# [4, 5, 6]
 ```

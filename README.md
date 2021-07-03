@@ -36,8 +36,10 @@ Hello. It's a repository with my notes about not obvious things in Ruby and RoR.
 - [How active records method works](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/030_how_active_records_methods_work)
 - [How to render images in iTerm](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/031_how_to_render_images_in_iterm)
 - [Isolate transaction in Rails](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/032_isolate_transaction_in_rails)
-- [Open core libs source code](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/033_open_core_libs_source_code)
+- [Open source code](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/033_open_core_libs_source_code)
 - [How to pass method like a block](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/034_how_to_pass_method_like_a_block)
+- [Rails 6 load order](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/035_rails_6_load_order)
+- [Map/Filter/Reduce shortcuts](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/036_map_filter_reduce_shortcuts)
 
 ## About Ruby ecosystem
 
