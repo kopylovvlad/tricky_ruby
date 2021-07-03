@@ -40,6 +40,7 @@ Hello. It's a repository with my notes about not obvious things in Ruby and RoR.
 - [How to pass method like a block](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/034_how_to_pass_method_like_a_block)
 - [Rails 6 load order](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/035_rails_6_load_order)
 - [Map/Filter/Reduce shortcuts](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/036_map_filter_reduce_shortcuts)
+- [How to DRY rails routes](https://github.com/kopylovvlad/tricky_ruby/tree/master/content/037_how_to_dry_rails_routes)
 
 ## About Ruby ecosystem
 

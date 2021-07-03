@@ -1,0 +1,47 @@
+## How to DRY rails routes
+
+If you have a lot of duplications in Rails routes you can DRY it. By lamdba:
+
+```ruby
+Rails.application.routes.draw do
+  api_default_routes = lambda do
+    resources :topics, only: :index
+    resources :users, only: :index
+  end
+
+  namespace 'api' do
+    api_default_routes.call
+    namespace 'v2' do
+      api_default_routes.call
+    end
+  end
+end
+```
+
+Or with function
+
+```ruby
+Rails.application.routes.draw do
+  def api_default_routes
+    resources :topics, only: :index
+    resources :users, only: :index
+  end
+
+  namespace 'api' do
+    api_default_routes
+    namespace 'v2' do
+      api_default_routes
+    end
+  end
+end
+```
+
+And result is:
+
+```
+       Prefix Verb URI Pattern              Controller#Action
+   api_topics GET  /api/topics(.:format)    api/topics#index
+    api_users GET  /api/users(.:format)     api/users#index
+api_v2_topics GET  /api/v2/topics(.:format) api/v2/topics#index
+ api_v2_users GET  /api/v2/users(.:format)  api/v2/users#index
+```
