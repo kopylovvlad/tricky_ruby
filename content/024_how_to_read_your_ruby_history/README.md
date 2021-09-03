@@ -1,3 +1,0 @@
-## How to read your ruby history
-
-By default your ruby history is located in `~/.irb-history` file. If your application use pry, your history is in `~/.pry_history` file.
