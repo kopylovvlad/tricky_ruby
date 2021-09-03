@@ -1,3 +1,0 @@
-## Generator for rails new command
-
-[RailsNew](https://railsnew.io) is super usefull site to generate your new RoR application
