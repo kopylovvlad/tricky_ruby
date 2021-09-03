@@ -1,4 +1,4 @@
 # Ruby
 
-Welcome to ruby page
+Welcome to Ruby page. Please open menu and enjoy.
 

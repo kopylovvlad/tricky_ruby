@@ -1,3 +1,3 @@
 # Ruby Ecosystem
 
-Welcome to ruby ecosystem page
+Welcome to Ruby ecosystem page. Please open menu and enjoy.

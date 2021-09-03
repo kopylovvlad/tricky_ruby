@@ -1,3 +1,3 @@
 # Ruby on Rails
 
-Welcome to Ruby on Rails page
+Welcome to Ruby on Rails page. Please open menu and enjoy.
