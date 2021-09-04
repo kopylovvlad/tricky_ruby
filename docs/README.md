@@ -5,3 +5,4 @@ Hello. It's a repository with my notes about not obvious things in Ruby and RoR.
 - [Ruby hello page](ruby/README.md)
 - [RubyOnRails hello page](ruby_on_rails/README.md)
 - [Ruby Ecosystem hello page](ecosystem/README.md)
+- [Main repository](https://github.com/kopylovvlad/tricky_ruby/)
