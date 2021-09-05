@@ -30,6 +30,7 @@
   - [Open the source code](ruby/025.md)
   - [How to pass method like a block](ruby/026.md)
   - [Map/Filter/Reduce shortcuts](ruby/027.md)
+  - [Don't use NotImplementedError in abstract methods](ruby/028.md)
 
 - RubyOnRails
   - [Hello page](ruby_on_rails/README.md)
