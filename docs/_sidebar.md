@@ -31,6 +31,9 @@
   - [How to pass method like a block](ruby/026.md)
   - [Map/Filter/Reduce shortcuts](ruby/027.md)
   - [Don't use NotImplementedError in abstract methods](ruby/028.md)
+  - [Differences between include extend](ruby/029.md)
+  - [How to exec a ruby script faster](ruby/030.md)
+  - [Implicit module including](ruby/031.md)
 
 - RubyOnRails
   - [Hello page](ruby_on_rails/README.md)
