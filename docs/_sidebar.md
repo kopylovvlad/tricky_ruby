@@ -47,6 +47,7 @@
   - [Isolate transaction in Rails](ruby_on_rails/008.md)
   - [Rails 6 load order](ruby_on_rails/009.md)
   - [How to DRY rails routes](ruby_on_rails/010.md)
+  - [How to share data between class and instance](ruby_on_rails/011.md)
 
 - Ruby Ecosystem
   - [Hello page](ecosystem/README.md)
