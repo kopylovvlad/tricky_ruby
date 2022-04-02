@@ -35,6 +35,7 @@
   - [How to exec a ruby script faster](ruby/030.md)
   - [Implicit module including](ruby/031.md)
   - [Monkey patch with prepend](ruby/032.md)
+  - [How to reload Ruby code](ruby/033.md)
 
 - RubyOnRails
   - [Hello page](ruby_on_rails/README.md)
