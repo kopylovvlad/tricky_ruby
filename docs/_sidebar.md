@@ -37,6 +37,7 @@
   - [Monkey patch with prepend](ruby/032.md)
   - [How to reload Ruby code](ruby/033.md)
   - [How to create class dynamically](ruby/034.md)
+  - [How to pass variables to erb-template](ruby/035.md)
 
 - RubyOnRails
   - [Hello page](ruby_on_rails/README.md)
