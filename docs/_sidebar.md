@@ -39,6 +39,7 @@
   - [How to create class dynamically](ruby/034.md)
   - [How to pass variables to erb-template](ruby/035.md)
   - [Write nested code with instance_exec](ruby/036.md)
+  - [How to colorize the text output](ruby/037.md)
 
 - RubyOnRails
   - [Hello page](ruby_on_rails/README.md)
