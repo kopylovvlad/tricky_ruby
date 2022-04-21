@@ -40,6 +40,7 @@
   - [How to pass variables to erb-template](ruby/035.md)
   - [Write nested code with instance_exec](ruby/036.md)
   - [How to colorize the text output](ruby/037.md)
+  - [Flexible method params](ruby/038.md)
 
 - RubyOnRails
   - [Hello page](ruby_on_rails/README.md)
