@@ -41,6 +41,7 @@
   - [Write nested code with instance_exec](ruby/036.md)
   - [How to colorize the text output](ruby/037.md)
   - [Flexible method params](ruby/038.md)
+  - [Floating point math fix](ruby/039.md)
 
 - RubyOnRails
   - [Hello page](ruby_on_rails/README.md)
