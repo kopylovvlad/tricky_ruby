@@ -56,6 +56,7 @@
   - [Rails 6 load order](ruby_on_rails/009.md)
   - [How to DRY rails routes](ruby_on_rails/010.md)
   - [How to share data between class and instance](ruby_on_rails/011.md)
+  - [Security tools](ruby_on_rails/012.md)
 
 - Ruby Ecosystem
   - [Hello page](ecosystem/README.md)
