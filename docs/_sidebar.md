@@ -43,6 +43,7 @@
   - [Flexible method params](ruby/038.md)
   - [Floating point math fix](ruby/039.md)
   - [Flip Flop Operator](ruby/040.md)
+  - [String interpolation without curly braces](ruby/041.md)
 
 - RubyOnRails
   - [Hello page](ruby_on_rails/README.md)
