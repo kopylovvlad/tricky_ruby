@@ -59,6 +59,7 @@
   - [How to DRY rails routes](ruby_on_rails/010.md)
   - [How to share data between class and instance](ruby_on_rails/011.md)
   - [Security tools](ruby_on_rails/012.md)
+  - [Railsdiff](ruby_on_rails/013.md)
 
 - Ruby Ecosystem
   - [Hello page](ecosystem/README.md)
@@ -66,3 +67,4 @@
   - [Generator for rails new command](ecosystem/002.md)
   - [Test-prof - a tool to analyze your test suite performance](ecosystem/003.md)
   - [How to run Rack server](ecosystem/004.md)
+  - [End of life](ecosystem/005.md)
