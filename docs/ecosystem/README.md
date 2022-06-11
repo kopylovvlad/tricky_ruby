@@ -1,3 +1,11 @@
 # Ruby Ecosystem
 
 Welcome to Ruby ecosystem page. Please open menu and enjoy.
+
+## Menu
+
+- [Checklist for authors and maintainers of Ruby gems](ecosystem/001.md)
+- [Generator for rails new command](ecosystem/002.md)
+- [Test-prof - a tool to analyze your test suite performance](ecosystem/003.md)
+- [How to run Rack server](ecosystem/004.md)
+- [End of life](ecosystem/005.md)
