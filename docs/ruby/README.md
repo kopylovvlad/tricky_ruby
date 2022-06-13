@@ -45,6 +45,7 @@ Welcome to Ruby page. Please open menu and enjoy.
 - [Floating point math fix](ruby/039.md)
 - [Flip Flop Operator](ruby/040.md)
 - [String interpolation without curly braces](ruby/041.md)
+- [String interpolation and to_s method](ruby/042.md)
 
 ## Links
 
