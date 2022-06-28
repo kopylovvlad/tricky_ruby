@@ -23,7 +23,7 @@ Welcome to Ruby page. Please open menu and enjoy.
 - [Trailing comma in functions](ruby/017.md)
 - [Ensure inside a function](ruby/018.md)
 - [Creating variables and self assignment](ruby/019.md)
-- [Chaining then to organise your code](ruby/020.md)
+- [Then and tap to organise your code](ruby/020.md)
 - [How to read your ruby history](ruby/021.md)
 - [How to pass block without &block argument](ruby/022.md)
 - [Heredoc without leading and trailing whitespace](ruby/023.md)
