@@ -9,3 +9,4 @@ Welcome to Ruby ecosystem page. Please open menu and enjoy.
 - [Test-prof - a tool to analyze your test suite performance](ecosystem/003.md)
 - [How to run Rack server](ecosystem/004.md)
 - [End of life](ecosystem/005.md)
+- [Rspec bisect](ecosystem/006.md)
