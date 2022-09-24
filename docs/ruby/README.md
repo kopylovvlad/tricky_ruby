@@ -35,7 +35,7 @@ Welcome to Ruby page. Please open menu and enjoy.
 - [Differences between include extend](ruby/029.md)
 - [How to exec a ruby script faster](ruby/030.md)
 - [Implicit module including](ruby/031.md)
-- [Monkey patch with prepend](ruby/032.md)
+- [Ways to monkey patch](ruby/032.md)
 - [How to reload Ruby code](ruby/033.md)
 - [How to create class dynamically](ruby/034.md)
 - [How to pass variables to erb-template](ruby/035.md)
