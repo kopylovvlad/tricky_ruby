@@ -1,3 +1,6 @@
 - [Ruby](ruby/README.md)
 - [RubyOnRails](ruby_on_rails/README.md)
 - [Ruby Ecosystem](ecosystem/README.md)
+- [Postgresql](postgresql/README.md)
+- [Software design](design/README.md)
+- [Terminal](terminal/README.md)
