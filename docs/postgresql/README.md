@@ -14,7 +14,7 @@ Welcome to postgresql page. Please open menu and enjoy.
 - [Count](postgresql/007.md)
 - [Joins and subqueries](postgresql/008.md)
 - [Create table from select](postgresql/009.md)
-- [How to join part of table](postgresql/010.md)
+- [How to join a part of table](postgresql/010.md)
 
 ## Links
 
