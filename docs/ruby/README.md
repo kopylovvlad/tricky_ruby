@@ -47,6 +47,7 @@ Welcome to Ruby page. Please open menu and enjoy.
 - [String interpolation without curly braces](ruby/041.md)
 - [String interpolation and to_s method](ruby/042.md)
 - [Decorators for methods](ruby/043.md)
+- [Private and protected](ruby/044.md)
 
 ## Links
 
