@@ -17,6 +17,8 @@ Welcome to Ruby on Rails page. Please open menu and enjoy.
 - [How to share data between class and instance](ruby_on_rails/011.md)
 - [Security tools](ruby_on_rails/012.md)
 - [Railsdiff](ruby_on_rails/013.md)
+- [find vs find_by](ruby_on_rails/014.md)
+- [preload vs includes](ruby_on_rails/015.md)
 
 ## Links
 

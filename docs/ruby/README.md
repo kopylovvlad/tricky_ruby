@@ -48,6 +48,7 @@ Welcome to Ruby page. Please open menu and enjoy.
 - [String interpolation and to_s method](ruby/042.md)
 - [Decorators for methods](ruby/043.md)
 - [Private and protected](ruby/044.md)
+- [How to declare unary operator](ruby/045.md)
 
 ## Links
 
