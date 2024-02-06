@@ -49,6 +49,7 @@ Welcome to Ruby page. Please open menu and enjoy.
 - [Decorators for methods](ruby/043.md)
 - [Private and protected](ruby/044.md)
 - [How to declare unary operator](ruby/045.md)
+- [Copy data to clipboard in ruby](ruby/046.md)
 
 ## Links
 
