@@ -11,3 +11,4 @@ Welcome to Ruby ecosystem page. Please open menu and enjoy.
 - [End of life](ecosystem/005.md)
 - [Rspec bisect](ecosystem/006.md)
 - [How to test code with threads](ecosystem/007.md)
+- [How to match array in Rspec](ecosystem/008.md)
