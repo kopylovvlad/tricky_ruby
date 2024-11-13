@@ -50,6 +50,7 @@ Welcome to Ruby page. Please open menu and enjoy.
 - [Private and protected](ruby/044.md)
 - [How to declare unary operator](ruby/045.md)
 - [Copy data to clipboard in ruby](ruby/046.md)
+- [How to hide your console input](ruby/047.md)
 
 ## Links
 
