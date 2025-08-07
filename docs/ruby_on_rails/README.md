@@ -19,7 +19,8 @@ Welcome to Ruby on Rails page. Please open menu and enjoy.
 - [Railsdiff](ruby_on_rails/013.md)
 - [find vs find_by](ruby_on_rails/014.md)
 - [preload vs includes](ruby_on_rails/015.md)
-= [missing an association with where.missing](ruby_on_rails/016.md)
+- [missing an association with where.missing](ruby_on_rails/016.md)
+- [How to load yml-config](ruby_on_rails/017.md)
 
 ## Links
 
