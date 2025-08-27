@@ -21,6 +21,7 @@ Welcome to Ruby on Rails page. Please open menu and enjoy.
 - [preload vs includes](ruby_on_rails/015.md)
 - [missing an association with where.missing](ruby_on_rails/016.md)
 - [How to load yml-config](ruby_on_rails/017.md)
+- [How to calculate number of workers for puma](ruby_on_rails/018.md)
 
 ## Links
 
