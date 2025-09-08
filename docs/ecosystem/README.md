@@ -14,3 +14,4 @@ Welcome to Ruby ecosystem page. Please open menu and enjoy.
 - [How to match array in Rspec](ecosystem/008.md)
 - [How to split cookies data in Faraday](ecosystem/009.md)
 - [Add gems in single script](ecosystem/010.md)
+- [How to test code with sequel async_thread_pool](ecosystem/011.md)

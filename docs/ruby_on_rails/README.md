@@ -22,6 +22,7 @@ Welcome to Ruby on Rails page. Please open menu and enjoy.
 - [missing an association with where.missing](ruby_on_rails/016.md)
 - [How to load yml-config](ruby_on_rails/017.md)
 - [How to calculate number of workers for puma](ruby_on_rails/018.md)
+- [How to serialize openstruct](ruby_on_rails/019.md)
 
 ## Links
 
