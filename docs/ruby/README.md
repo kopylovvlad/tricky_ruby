@@ -52,6 +52,7 @@ Welcome to Ruby page. Please open menu and enjoy.
 - [Copy data to clipboard in ruby](ruby/046.md)
 - [How to hide your console input](ruby/047.md)
 - [How to run terminal command](ruby/048.md)
+- [Use alias to overwrite method](ruby/049.md)
 
 ## Links
 
