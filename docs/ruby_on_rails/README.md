@@ -23,6 +23,7 @@ Welcome to Ruby on Rails page. Please open menu and enjoy.
 - [How to load yml-config](ruby_on_rails/017.md)
 - [How to calculate number of workers for puma](ruby_on_rails/018.md)
 - [How to serialize openstruct](ruby_on_rails/019.md)
+- [Batch with range](ruby_on_rails/020.md)
 
 ## Links
 
