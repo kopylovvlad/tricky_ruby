@@ -53,6 +53,7 @@ Welcome to Ruby page. Please open menu and enjoy.
 - [How to hide your console input](ruby/047.md)
 - [How to run terminal command](ruby/048.md)
 - [Use alias to overwrite method](ruby/049.md)
+- [Know hostname of your machine](ruby/050.md)
 
 ## Links
 
