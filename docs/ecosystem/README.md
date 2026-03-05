@@ -15,3 +15,4 @@ Welcome to Ruby ecosystem page. Please open menu and enjoy.
 - [How to split cookies data in Faraday](ecosystem/009.md)
 - [Add gems in single script](ecosystem/010.md)
 - [How to test code with sequel async_thread_pool](ecosystem/011.md)
+- [How to log data in redis](ecosystem/012.md)
