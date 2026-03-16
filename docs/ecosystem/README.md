@@ -17,3 +17,4 @@ Welcome to Ruby ecosystem page. Please open menu and enjoy.
 - [How to test code with sequel async_thread_pool](ecosystem/011.md)
 - [How to log data in redis](ecosystem/012.md)
 - [How to make your controllers faster](ecosystem/013.md)
+- [How to run prometheus exporter](ecosystem/014.md)
