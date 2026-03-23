@@ -10,4 +10,5 @@ Also there are some my notes about Postgresql, software design and terminal tric
 - [Postgresql](postgresql/README.md)
 - [Software design](design/README.md)
 - [Terminal](terminal/README.md)
+- [Languages](languages/README.md)
 - [Main repository](https://github.com/kopylovvlad/tricky_ruby/)
