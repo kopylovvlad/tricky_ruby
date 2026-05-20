@@ -18,3 +18,4 @@ Welcome to Ruby ecosystem page. Please open menu and enjoy.
 - [How to log data in redis](ecosystem/012.md)
 - [How to make your controllers faster](ecosystem/013.md)
 - [How to run prometheus exporter](ecosystem/014.md)
+- [Falcon and sentry](ecosystem/015.md)
