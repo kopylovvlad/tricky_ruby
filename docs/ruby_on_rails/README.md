@@ -24,6 +24,7 @@ Welcome to Ruby on Rails page. Please open menu and enjoy.
 - [How to calculate number of workers for puma](ruby_on_rails/018.md)
 - [How to serialize openstruct](ruby_on_rails/019.md)
 - [Batch with range](ruby_on_rails/020.md)
+- [Thread safe validation](ruby_on_rails/021.md)
 
 ## Links
 
